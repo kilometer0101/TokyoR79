@@ -1,0 +1,61 @@
+---
+title: "Untitled"
+author: "km"
+date: "2019/6/27"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+# 正規分布
+
+### 確率変数Xは正規分布に従う
+
+$$
+X \sim Normal(\mu, \sigma^2) \tag{1}
+$$
+
+
+
+$$
+X \sim \mathcal{N}(\mu, \sigma^2) \tag{2}
+$$
+
+### 確率密度関数 (probability density function, PDF)
+
+$$
+f(x) = \frac{1}{\sqrt{2\pi\sigma^2}}\ \exp{\Big[-\frac{(x-\mu)^2}{2\sigma^2}\Big]},\ \ x\in \mathbb{R} \tag{3}
+$$
+
+$$
+p(a≤x≤b) =\int_a^bf(x)dx \tag{4}
+$$
+サンプルデータ
+
+```{r}
+.mu <- 0
+.sd <- 1
+.bin <- 0.1
+
+dat_n <- data.frame(x = seq(-5, 5, by = .bin)) %>% 
+  mutate(d = dnorm(x, .mu, .sd),
+         q = pnorm(x, .mu, .sd))
+```
+
+可視化
+
+```{r, fig.width=7, fig.height=6}
+dat_n %>% 
+  rename(density_function = d,
+         cumulative_distribution_function = q) %>% 
+  gather(key, val, -x) %>% 
+  ggplot(aes(x, val))+
+  geom_path()+
+  facet_wrap(~key, ncol = 1, scales = "free")+
+  theme_minimal()+
+  theme(axis.title.y = element_blank(),
+        strip.text = element_text(size = 15))
+```

@@ -381,8 +381,62 @@ $(document).ready(function () {
 </div>
 
 
-<div id="section" class="section level1">
-<h1>正規分布</h1>
+<div id="section" class="section level2">
+<h2>1. 確率</h2>
+<div id="section-1" class="section level3">
+<h3>写像</h3>
+<p>集合<span class="math inline">\(x\)</span>に含まれる要素<span class="math inline">\(x\)</span>に対し、集合<span class="math inline">\(Y\)</span>に含まれる要素<span class="math inline">\(y\)</span>が1つに定まるとき、この対応関係を写像<span class="math inline">\(f\)</span>と呼ぶ。</p>
+<p><span class="math display">\[
+f:X \to Y  \tag{1}
+\]</span></p>
+</div>
+<div id="section-2" class="section level3">
+<h3>標本空間Ω</h3>
+<p>今想定されている事柄の全てを含む空間を<strong>標本空間</strong><span class="math inline">\(\Omega\)</span>とする。</p>
+</div>
+<div id="section-3" class="section level3">
+<h3>根元事象ω</h3>
+<p><span class="math inline">\(\Omega\)</span>に含まれる最小単位を<span class="math inline">\(\omega\)</span>とする。この<span class="math inline">\(\omega\)</span>の事を<strong>根元事象</strong>(もしくは標本, 標本点など)と呼ぶ。</p>
+</div>
+<div id="a" class="section level3">
+<h3>事象A</h3>
+<p>ここで、標本空間<span class="math inline">\(\Omega\)</span>の部分集合族<span class="math inline">\(\mathcal{F}\)</span>を定義し、<span class="math inline">\(\mathcal{F}\)</span>の要素を<strong>事象</strong><span class="math inline">\(A\)</span>とする。</p>
+<p><span class="math display">\[
+\begin{eqnarray}
+&amp;&amp;\mathcal{F}\subseteq\Omega\\
+&amp;&amp;\mathcal{F}=\{A_1, A_2, ..., A_N\}
+\end{eqnarray}
+\]</span></p>
+<p>直感的には、標本空間をいくつかの事象に分割するその分け方を<span class="math inline">\(\mathcal{F}\)</span>と置いている。 ただし次の条件を満たすものとする。</p>
+<p><span class="math display">\[
+\begin{eqnarray}
+&amp;&amp;\mathcal{F} \neq \varnothing\\
+&amp;&amp;A \in \mathcal{F} &amp;\Rightarrow \bar{A} \in \mathcal{F}\\
+&amp;&amp;A_{i} \in \mathcal{F} &amp;\Rightarrow \bigcup_{i} A_{i} \in \mathcal{F}\ (i \in 1, 2, ..., N)
+\end{eqnarray}
+\]</span></p>
+<p>この時、<span class="math inline">\(\mathcal{F}\)</span>が<strong>σ加法族</strong>をつくる（もしくはボレル集合体である）、と言う。</p>
+<p>書き下すと、事象は空集合ではない、事象の補集合もまた事象である、事象の要素の加算和もまた事象である。</p>
+</div>
+<div id="p" class="section level3">
+<h3>確率p</h3>
+<p><strong>確率</strong><span class="math inline">\(p\)</span>は、σ加法族をつくる<span class="math inline">\(\mathcal{F}\)</span>を区間<span class="math inline">\([0,1]\)</span>に写像した結果の値である。</p>
+<p>この写像を<span class="math inline">\(P\)</span>とし、<strong>確率測度</strong>と呼ぶ。これは以下の性質を満たす。</p>
+<p><span class="math display">\[
+\begin{eqnarray}
+&amp;&amp;P:\mathcal{F} \rightarrow [0,1]\\
+&amp;&amp;P(\Omega)=1\\
+&amp;&amp;\forall (A_i \cap A_j)=\varnothing \Rightarrow P\Big(\bigcup_i A_i\Big) = \sum_i P(A_i) \ \ \ (i, j \in 1, 2, ..., N,\ i\neq j)
+\end{eqnarray}
+\]</span></p>
+<p>この時、<span class="math inline">\((\Omega, \mathcal{F}, P)\)</span>を<strong>確率空間</strong>と呼ぶ。</p>
+</div>
+</div>
+<div id="section-4" class="section level2">
+<h2>2. 確率変数</h2>
+</div>
+<div id="section-5" class="section level2">
+<h2>3. 正規分布</h2>
 <div id="x" class="section level3">
 <h3>確率変数Xは正規分布に従う</h3>
 <p><span class="math display">\[

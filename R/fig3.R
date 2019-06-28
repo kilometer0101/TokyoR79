@@ -1,13 +1,14 @@
 
-theme_fig3 <- function(g, ...){
-  g + 
-    theme_classic(base_family = "HiraKakuPro-W3")+
-    scale_y_continuous(limits = c(0, 1), breaks = c(0:4/4))+
+theme_fig3 <- function(...){
+  list(
+    theme_classic(base_family = "HiraKakuPro-W3"),
+    scale_y_continuous(limits = c(0, 1), breaks = c(0:4/4)),
     scale_x_continuous(limits = c(-0.2, 1.2), breaks = c(0, 1), 
-                       labels = c(expression(x[min]), expression(x[min])))+
+                       labels = c(expression(x[min]), expression(x[min]))),
     theme(axis.title = element_text(size = 20),
           axis.text.x = element_text(size = 17),
           title = element_text(size = 25))
+    )
 }
 
 g1 <- data.frame(x = c(0, 1), y = 0) %>% 
@@ -36,7 +37,7 @@ g3 <- data.frame(x = c(0, 1), y = 0.6) %>%
 
 
 
-g <- map(list(g1, g2, g3),  theme_fig3) %>% 
-  wrap_plots()
+g <- wrap_plots(g1, g2, g3) * theme_fig3()
 
 ggsave("fig/fig3.png", g, width = 10, height = 4)
+

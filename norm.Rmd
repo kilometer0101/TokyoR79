@@ -1,7 +1,7 @@
 ---
 title: "Untitled"
 author: "km"
-date: "2019/6/27"
+date: "2019/6/29"
 output: html_document
 ---
 
@@ -9,6 +9,9 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 ```
+
+描き途中（間に合わなかった）
+
 ## 1. 確率
 
 ### 写像

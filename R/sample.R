@@ -4,7 +4,7 @@ library(patchwork)
 
 set.seed(71)
 
-x <- rnorm(1000, 0, 1)
+rnorm(1000, 0, 1)
 
 dnorm(0, 0, 1)
 

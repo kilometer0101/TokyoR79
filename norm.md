@@ -7,10 +7,7 @@ output:
     keep_md: true
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-library(tidyverse)
-```
+
 
 描き途中（間に合わなかった）
 
@@ -102,7 +99,8 @@ p(a≤x≤b) =\int_a^bf(x)dx \tag{4}
 $$
 サンプルデータ
 
-```{r}
+
+```r
 .mu <- 0
 .sd <- 1
 .bin <- 0.1
@@ -114,7 +112,8 @@ dat_n <- data.frame(x = seq(-5, 5, by = .bin)) %>%
 
 可視化
 
-```{r, fig.width=7, fig.height=6}
+
+```r
 dat_n %>% 
   rename(density_function = d,
          cumulative_distribution_function = q) %>% 
@@ -126,3 +125,5 @@ dat_n %>%
   theme(axis.title.y = element_blank(),
         strip.text = element_text(size = 15))
 ```
+
+![](norm_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
